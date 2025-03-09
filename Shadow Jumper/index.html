@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shadow Jumper</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div id="start-screen" class="screen">
+            <h1>Shadow Jumper</h1>
+            <p>Control two characters - one in light, one in shadow.</p>
+            <p>They move oppositely. When one jumps, the other ducks.</p>
+            <p>Reach the goal without either character dying!</p>
+            <button id="start-button">Start Game</button>
+            <button id="instructions-button">Instructions</button>
+        </div>
+
+        <div id="instructions-screen" class="screen hidden">
+            <h2>How to Play</h2>
+            <ul>
+                <li>Use <strong>LEFT/RIGHT</strong> arrow keys to move</li>
+                <li>Press <strong>UP</strong> to make Light character jump (Shadow character will duck)</li>
+                <li>Press <strong>DOWN</strong> to make Light character duck (Shadow character will jump)</li>
+                <li>Guide both characters to their respective goals</li>
+                <li>If either character falls or hits an obstacle, you lose</li>
+            </ul>
+            <button id="back-button">Back</button>
+        </div>
+
+        <div id="game-screen" class="screen hidden">
+            <div id="level-info">Level: <span id="level-number">1</span></div>
+            <div id="game-area">
+                <div id="light-world" class="world">
+                    <div id="light-character" class="character"></div>
+                    <div id="light-goal" class="goal"></div>
+                </div>
+                <div id="shadow-world" class="world">
+                    <div id="shadow-character" class="character"></div>
+                    <div id="shadow-goal" class="goal"></div>
+                </div>
+            </div>
+            <div id="controls">
+                <button id="restart-button">Restart Level</button>
+                <button id="menu-button">Main Menu</button>
+            </div>
+        </div>
+
+        <div id="level-complete-screen" class="screen hidden">
+            <h2>Level Complete!</h2>
+            <p>Well done! You've completed level <span id="completed-level">1</span>.</p>
+            <button id="next-level-button">Next Level</button>
+            <button id="level-menu-button">Main Menu</button>
+        </div>
+
+        <div id="game-over-screen" class="screen hidden">
+            <h2>Game Over</h2>
+            <p id="game-over-message">One of your characters didn't make it!</p>
+            <button id="try-again-button">Try Again</button>
+            <button id="game-over-menu-button">Main Menu</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
